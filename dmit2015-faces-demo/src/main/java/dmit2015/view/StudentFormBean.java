@@ -1,13 +1,11 @@
 package dmit2015.view;
 
-
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
 
 import java.io.Serializable;
-
 
 @Named
 @ViewScoped
@@ -23,12 +21,12 @@ public class StudentFormBean implements Serializable {
         FacesMessage message = new FacesMessage(
                 FacesMessage.SEVERITY_INFO,
                 "Form Submitted",
-                "Welcome " + fullName
+                "Welcome " + fullName + " from " + program
         );
         FacesContext.getCurrentInstance()
                 .addMessage(null, message);
-    }
 
+    }
     public int getSubmissionCount() {
         return submissionCount;
     }
@@ -56,6 +54,4 @@ public class StudentFormBean implements Serializable {
     public void setFullTime(boolean fullTime) {
         this.fullTime = fullTime;
     }
-
-
 }
